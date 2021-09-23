@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title> ICDAR 2019 cTDaR | Tasks</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/animate.min.css" rel="stylesheet"> 
+	<link href="css/lightbox.css" rel="stylesheet"> 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->       
+	<link rel="shortcut icon" href="images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header">      
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 overflow">
+				</div>
+			 </div>
+		</div>
+		<div class="navbar navbar-inverse" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<!-- <span class="sr-only">Toggle navigation</span> -->
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="index.html">
+						<h1><img src="images/logo.png" alt="logo" style="width: 45%; height: 40%; max-width: 500px; padding-left: 45px" ></h1>
+					</a>
+				</div>
+
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li class="dropdown active"><a href="#">Tasks<i class="fa fa-angle-down"></i></a>
+							<ul role="menu" class="sub-menu">
+								<li><a href="tasks.html">Tasks</a></li>
+								<li><a href="results.html">Results</a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a href="#">Dataset<i class="fa fa-angle-down"></i></a>
+							<ul role="menu" class="sub-menu">
+								<li><a href="dataset-description.html">Description</a></li>
+								<li><a href="dataset-training.html">Training Dataset</a></li>
+								<li><a href="dataset-testing.html">Test Dataset</a></li>
+							</ul>
+						</li>     
+						<li><a href="evaluation.html">Evaluation</a></li>
+						<li><a href="organizers.html">Organizers</a></li>
+						<li><a href="faq.html">FAQ</a></li>               
+					</ul>
+				</div>
+<!-- 				<div class="search">
+					<form role="form">
+						<i class="fa fa-search"></i>
+						<div class="field-toggle">
+							<input type="text" class="search-form" autocomplete="off" placeholder="Search">
+						</div>
+					</form>
+				</div> -->
+			</div>
+		</div>
+	</header>
+	<!--/#header-->
+
+	<section id="page-breadcrumb">
+		<div class="vertical-center sun">
+			 <div class="container">
+				<div class="row">
+					<div class="action">
+						<div class="col-sm-12">
+							<h1 class="title">Tasks</h1>
+							<!-- <p>Why our Clients love to work with us.</p> -->
+						</div>
+					 </div>
+				</div>
+			</div>
+		</div>
+   </section>
+	<!--/#page-breadcrumb-->
+
+	<section id="features">
+		<div class="container">
+			<div class="row">
+				<div class="single-features">
+					<div class="col-sm-10 col-sm-offset-1 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+						<h2><strong>Task Description</strong></h2>
+						<p>
+							The aim of this competition is to evaluate the performance of state of the art methods for table detection (TRACK A) and table recognition (TRACK B). For the first track, document images containing one or several tables are provided. For TRACK B two subtracks exist: the first subtrack (B.1) provides the table region. Thus, only the table structure recognition must be performed. The second subtrack (B.2) provides no a-priori information. This means, the table region and table structure detection has to be done. The Ground Truth is provided in a similar format as for the ICDAR 2013 competition (see [2]):
+						</p>
+						<br>
+						<div id="annotation-example">
+							<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</p>
+							<p>&lt;document filename="filename.jpg"&gt;</p>
+							<div style="text-indent:30px;">
+									<p>&lt;table&gt;</p>
+									<div style="text-indent:60px;">
+										<p>&lt;Coords points="180,160 4354,160 4354,3287 180,3287"/&gt;</p>
+										<p>&lt;cell start-row='0' start-col='0' end-row='1' end-col='2'&gt;</p>
+										<div style="text-indent:90px;">
+											<p>&lt;Coords points="180,160 177,456 614,456 615,163"/&gt;</p>
+										</div>
+										<p>&lt;/cell&gt;</p>
+										<p> ... </p>
+									</div>
+									<p>&lt;/table&gt;</p>
+									<p> ... </p>
+							</div>
+							<p>&lt;/document&gt;</p>
+						</div>
+						<br>
+						<p>The difference to Gobel et al. [2] is the Coords tag which defines a table/cell as a polygon specified by a list of coordinates. For B.1 the table and its coordinates is given together with the input image.</p>
+						<!-- <h3>Important Note:</h3> -->
+						<p><strong>Important Note:</strong> For the modern dataset, the convex hull of the content describes a cell region. For the historical dataset, it is requested that the output region of a cell is the cell boundary. This is necessary due to the characteristics of handwritten text, which is often overlapping with different cells.</p>
+
+						<br>
+						<h2><strong>Submission Protocol</strong></h2>
+						<p>The submitted result file has to be a compressed tar file (.tar.gz) containing separate xml result files for each image in the test set. The folder structure must not be changed. Do not include the images in the result file. Even if your algorithm doesn’t detect any table on a certain image, you have to provide an “empty” result file. Please send your results to 
+							<a href="mailto:cTDAR@cvl.tuwien.ac.at">cTDAR@cvl.tuwien.ac.at</a> </p>
+						<br>
+
+						<span style="font-size: 18px; color: #686868; font-weight: bold">For Track A </span>
+						<span style="font-size: 16px; color: #686868;">methods have to provide an XML for each input image containing the table region, e.g.</span>
+						<p><strong>Input:</strong></p>
+						<p>/a/table1.jpg</p>
+						<p><strong>Requested output:</strong></p>
+						<p>/a/table1.jpg.xml with the table region information:</p>
+						<div id="annotation-example">
+							<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</p>
+							<p>&lt;document filename="table1.jpg"&gt;</p>
+							<div style="text-indent:30px;">
+									<p>&lt;table&gt;</p>
+									<div style="text-indent:60px;">
+										<p>&lt;Coords points="87,117 87,220 551,220, 551,87"/&gt;</p>
+									</div>
+									<p>&lt;/table&gt;</p>
+							</div>
+						<p>&lt;/document&gt;</p>
+						</div>
+						<br>
+						<span style="font-size: 18px; color: #686868; font-weight: bold">For Track B </span>
+						<span style="font-size: 16px; color: #686868;">methods have to provide an XML for each input image containing the table region and the cell structure. Note that the cell region is defined different for the modern dataset (convex hull of the content) and the historical dataset (cell boundary).</span>
+						<br> <br>
+						<p style="font-size: 18px; color: #686868; font-weight: bold">Track B.1</p>
+						<p><strong>Input:</strong></p>
+						<p>/a/table1.jpg + /a/table1.xml (specifying the table region)</p> <br>
+						<p style="font-size: 18px; color: #686868; font-weight: bold">Track B.2</p>
+						<p><strong>Input:</strong></p>
+						<p>/a/table1.jpg</p> <br>
+						<p><strong>Requested output</strong> for both tracks:</p>
+						<div id="annotation-example">
+							<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</p>
+							<p>&lt;document filename="table1.jpg"&gt;</p>
+							<div style="text-indent:30px;">
+									<p>&lt;table&gt;</p>
+									<div style="text-indent:60px;">
+										<p>&lt;Coords points="87,117 87,220 551,220, 551,87"/&gt;</p>
+										<p>&lt;cell start-row='0' start-col='0' end-row='1' end-col='2'&gt;</p>
+										<div style="text-indent:90px;">
+											<p>&lt;Coords points="180,160 177,456 614,456 615,163"/&gt;</p>
+										</div>
+										<p>&lt;/cell&gt;</p>
+										<p> ... </p>
+									</div>
+									<p>&lt;/table&gt;</p>
+									<p> ... </p>
+							</div>
+							<p>&lt;/document&gt;</p>
+						</div>
+						<p>The coords of a cell are defined by the convex hull of the content of a cell (modern dataset) or are defined by the cell border (historical dataset).</p>
+						<br>
+						<p>Example image of the modern dataset: </p>
+						<img src="images/data/task-sample-1.PNG" class="img-responsive" alt="" style="width: 70%; height: 70%; max-width: 550px">
+						<br>
+						<p>Example image of the modern dataset: </p>
+						<img src="images/data/task-sample-2.png" class="img-responsive" alt="" style="width: 70%; height: 80%; max-width: 550px">
+						<br>
+						<h3>References</h3>
+						<p id="references2">[1] L. Gao, X. Yi, Z. Jiang, L. Hao and Z. Tang, “ICDAR 2017 POD Competition,” in ICDAR, 2017, pp. 1417-1422.</p>
+						<p id="references3">[2] M. C. Gobel, T. Hassan, E. Oro, G. Orsi, ”ICDAR2013 Table Competition,” in Proc. of the 12th ICDAR (IEEE, 2013), pp. 1449-1453.</p>
+
+						<br>
+						<p>To participate in this competition, please click <a href="./sign-up.html">here</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	 <!--/#features-->
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="copyright-text text-center">
+						<p>&copy; PKU Founder Group 2019. All Rights Reserved.</p>
+						<p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/#footer-->
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/lightbox.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>   
+</body>
+</html>
